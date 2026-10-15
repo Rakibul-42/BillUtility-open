@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --font-sans: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --color-slate-950: #1B130D;
+    --color-slate-900: #241A12;
+    --color-slate-800: #332B25;
+    --color-slate-700: #4A3A2B;
+    --color-slate-600: #936E4D;
+    --color-slate-500: #936E4D;
+    --color-slate-400: #B49473;
+    --color-slate-300: #D7BF9B;
+    --color-slate-200: #E8D5B5;
+    --color-slate-100: #F2E4CB;
+    --color-slate-50: #2C2118;
+    --color-violet-800: #7F330E;
+    --color-violet-700: #A94812;
+    --color-violet-600: #A94812;
+    --color-violet-500: #E58A14;
+    --color-violet-400: #FDBB14;
+    --color-violet-300: #FDBB14;
+    --color-violet-200: #FFE0A3;
+    --color-violet-100: #4A2B13;
+    --color-violet-50: #33200F;
+    --color-orange-600: #A94812;
+    --color-orange-500: #E58A14;
+    --color-orange-400: #FDBB14;
+    --color-orange-300: #FFD48A;
+    --color-amber-600: #A94812;
+    --color-amber-500: #E58A14;
+    --color-amber-400: #FDBB14;
+    --color-amber-300: #FFD48A;
+    --color-blue-600: #936E4D;
+    --color-blue-500: #A94812;
+    --color-blue-400: #E58A14;
+    --color-blue-300: #FDBB14;
+    --color-cyan-500: #FDBB14;
+    --color-cyan-300: #FFD48A;
+    --color-emerald-700: #6F4D2E;
+    --color-emerald-600: #936E4D;
+    --color-emerald-500: #FDBB14;
+    --color-emerald-400: #E8D5B5;
+    --color-emerald-300: #F4D77E;
+    --color-emerald-100: #3A2B1E;
+    --color-rose-700: #A94812;
+    --color-rose-600: #A94812;
+    --color-rose-500: #A94812;
+    --color-rose-400: #E58A14;
+    --color-rose-300: #FDBB14;
+    --color-rose-100: #3A1E12;
+    --color-red-500: #A94812;
+    --color-red-300: #FDBB14;
+    /* --font-sans: "Inter", "Inter var", ui-sans-serif, system-ui, -apple-system,
+        Segoe UI, Roboto, sans-serif; */
+}
+
+:root {
+    --app-bg: #1B130D;
+    --app-panel: #241A12;
+    --app-card: #332B25;
+    --app-card-soft: rgba(51, 43, 37, 0.78);
+    --app-border: rgba(232, 213, 181, 0.12);
+    --app-text: #E8D5B5;
+    --app-muted: #936E4D;
+    --app-muted-light: #B49473;
+    --app-orange: #E58A14;
+    --app-gold: #FDBB14;
+    --app-rust: #A94812;
+}
+
+
+/* ===== Site-wide elevation & shadow tokens ===== */
+
+/* Card-level shadows — applied on every major card/panel */
+.card-shadow {
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.35),
+        0 4px 16px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(232, 213, 181, 0.06);
+}
+
+.card-shadow-hover {
+    transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+.card-shadow-hover:hover {
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.45),
+        0 8px 32px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(232, 213, 181, 0.10);
+    transform: translateY(-1px);
+}
+
+/* Button shadow */
+.btn-shadow {
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.4),
+        0 2px 8px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.btn-shadow:hover:not(:disabled) {
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.5),
+        0 4px 16px rgba(0, 0, 0, 0.35);
+    transform: translateY(-1px);
+}
+.btn-shadow:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Popup / modal / dropdown shadow */
+.popup-shadow {
+    box-shadow:
+        0 8px 60px rgba(0, 0, 0, 0.7),
+        0 2px 12px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(232, 213, 181, 0.08);
+}
+
+/* Numerical value hover glow — apply to span/div wrapping balance, income, expense numbers */
+.value-hover {
+    cursor: default;
+    transition: color 0.15s ease, text-shadow 0.15s ease;
+    display: inline-block;
+}
+.value-hover:hover {
+    color: #fdbb14;
+    text-shadow: 0 0 18px rgba(253, 187, 20, 0.45);
+}
+
+html,
+body,
+#root {
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-sans);
+    background:
+        radial-gradient(circle at 8% -10%, rgba(253, 187, 20, 0.18), transparent 32%),
+        radial-gradient(circle at 86% 4%, rgba(229, 138, 20, 0.16), transparent 28%),
+        linear-gradient(145deg, #241A12 0%, #1B130D 46%, #120C08 100%);
+    color: var(--app-text);
+    color-scheme: dark;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+    background: rgba(253, 187, 20, 0.32);
+    color: #fff7e8;
+}
+
+.bg-white {
+    background-color: var(--app-card) !important;
+}
+
+.bg-slate-50,
+.bg-slate-100 {
+    background-color: rgba(36, 26, 18, 0.86) !important;
+}
+
+.border-slate-100,
+.border-slate-200 {
+    border-color: var(--app-border) !important;
+}
+
+.text-slate-900,
+.text-slate-800 {
+    color: var(--app-text) !important;
+}
+
+.text-slate-700 {
+    color: #D7BF9B !important;
+}
+
+.text-slate-600,
+.text-slate-500 {
+    color: var(--app-muted) !important;
+}
+
+.hover\:bg-slate-50:hover,
+.hover\:bg-slate-100:hover {
+    background-color: rgba(253, 187, 20, 0.08) !important;
+}
+
+.ring-white {
+    --tw-ring-color: var(--app-panel) !important;
+}
+
+.bg-slate-900\/95,
+.bg-slate-900\/90,
+.bg-slate-900\/85,
+.bg-slate-900\/80 {
+    background-color: rgba(36, 26, 18, 0.88) !important;
+}
+
+.bg-slate-800,
+.hover\:bg-slate-800:hover {
+    background-color: var(--app-card) !important;
+}
+
+.border-slate-800,
+.border-slate-700 {
+    border-color: var(--app-border) !important;
+}
+
+.shadow-violet-500\/30,
+.shadow-violet-500\/25 {
+    --tw-shadow-color: rgba(229, 138, 20, 0.34) !important;
+}
+
+.focus\:border-violet-500:focus {
+    border-color: var(--app-orange) !important;
+}
+
+.focus\:ring-violet-500:focus {
+    --tw-ring-color: rgba(229, 138, 20, 0.52) !important;
+}
+
+input,
+select,
+textarea {
+    background-color: rgba(51, 43, 37, 0.92);
+    caret-color: var(--app-gold);
+}
+
+option {
+    background-color: var(--app-card);
+    color: var(--app-text);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--app-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4A3A2B;
+    border: 2px solid var(--app-bg);
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--app-rust);
+}
+
+@keyframes scrollUp {
+    from { transform: translateY(0); }
+    to { transform: translateY(-33.3333%); }
+}
+
+@keyframes scrollDown {
+    from { transform: translateY(-33.3333%); }
+    to { transform: translateY(0); }
+}
